@@ -13,6 +13,7 @@ body {
 
 main {
   flex: 1;
+  margin-top: 0px;
 }
 
 .home {
@@ -22,8 +23,49 @@ main {
   text-align: center;
   padding-top: 1rem;
   padding-bottom: 2rem;
+  margin-top: 0;
+
+  h1 {
+    font-size: 3rem; /* Adjust to taste */
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  p {
+    margin-top: 0px;
+    font-size: 16pt;
+    margin-left: 5%;
+    margin-right: 5%;
+
+  }
 }
 
+.schdl{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* text-align: center; */
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  margin-top: 0; 
+  font-size: 16pt;
+
+  h2{
+    font-size: 25pt;
+  }
+  p{
+    text-align: center;
+  }
+}
+
+.contact{
+  text-align: center;
+  font-size: 16pt;
+
+h2{
+  font-size: 25pt;
+}
+}
 
 .landing-image {
   width: 100%;
