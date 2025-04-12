@@ -1,97 +1,241 @@
-/* Reset and base styles */
-* {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f5f1e8;
-    color: #5e4b3c;
-    line-height: 1.6;
-    background-color: pink !important;
-    
-  }
-  
-  header {
-    background: #5e4b3c;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-    position: relative;
-  }
-  
-  nav {
-    margin-top: 0.5rem;
-  }
-  
-  nav a {
-    color: #fff;
-    margin: 0 10px;
-    text-decoration: none;
-    display: inline-block;
-    padding: 0.3rem;
-  }
-  
-  main {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-    background: white;
-  }
-  
-  footer {
-    text-align: center;
-    padding: 1rem;
-    background: #5e4b3c;
-    color: white;
-  }
-  
-  /* Mobile Hamburger */
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;600&display=swap');
+
+/* Apply global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  background-color:#2e4a7e;
+  color: white;
+  line-height: 1.6;
+}
+
+main {
+  flex: 1;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}
+
+
+.landing-image {
+  width: 100%;
+  max-width: 450px; /* Adjust the width */
+  aspect-ratio: 1/1; /* Adjust the height */
+  border-radius: 10%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image is not distorted */
+  margin: 5px ;
+  display: block; /* Centers the image */
+}
+
+/* Force full-height layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+header, footer, main {
+  background-color: #2e4a7e;
+  padding: 1rem;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header Navigation */
+nav {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  align-items: center;
+}
+
+/* Responsive Hamburger Menu */
   .menu-toggle {
-    display: none;
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
     background: none;
     border: none;
-    font-size: 1.5rem;
-    color: white;
     cursor: pointer;
   }
-  
-  @media (max-width: 600px) {
-    nav {
-      display: none;
-      flex-direction: column;
-      gap: 0.5rem;
-      background: #8b6d5c;
-      padding: 1rem;
-    }
-  
-    nav.show {
-      display: flex;
-    }
-  
-    nav a {
-      margin: 0;
-      padding: 0.5rem;
-      background: #a27c65;
-      border-radius: 5px;
-    }
-  
-    .menu-toggle {
-      display: block;
-    }
-  
-    main {
-      padding: 1rem;
-    }
 
-    nav {
-        transition: max-height 0.3s ease;
-        overflow: hidden;
-      }
-      
+  .cloud-icon {
+    position: relative;
+    background: white;
+    width: 75px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    z-index: 1; /* Ensures cloud shape stays below bars */
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
   }
   
+  .cloud-icon::before,
+  .cloud-icon::after {
+    content: '';
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    z-index: -1; /* Ensure the cloud parts are below the bars */
+  }
+  
+  .cloud-icon::before {
+    width: 35px;
+    height: 35px;
+    top: -15px;
+    left: 13px;
+  }
+  
+  .cloud-icon::after {
+    width: 30px;
+    height: 30px;
+    top: -10px;
+    right: 5px;
+  }
+
+  .cloud-icon .bar {
+    position: relative; /* Ensure bars are in the same stacking context */
+    width: 20px;
+    height: 3px;
+    background-color: #2e4a7e;
+    margin: 4px auto;
+    border-radius: 2px;
+    z-index: 2; /* Ensure bars are on top */
+    top: 4px /* Lower menu bars w/in cloud */
+  }
+
+  /*  OLD NAV MENU .nav-menu {
+    display: none;
+    flex-direction: column;
+    background-color: #2e4a7e;
+    padding: 1rem;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  } */
+
+/* Nav menu hidden by default */
+.nav-menu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* Show nav menu when checkbox is checked */
+#menu-toggle:checked ~ .nav-menu {
+  display: flex;
+}
+
+/* Raindrop animation styles */
+.nav-menu a {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: raindrop 0.4s forwards;
+}
+
+#menu-toggle:checked ~ .nav-menu a:nth-child(1) {
+  animation-delay: 0.1s;
+}
+#menu-toggle:checked ~ .nav-menu a:nth-child(2) {
+  animation-delay: 0.2s;
+}
+#menu-toggle:checked ~ .nav-menu a:nth-child(3) {
+  animation-delay: 0.3s;
+}
+#menu-toggle:checked ~ .nav-menu a:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes raindrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ☁️ Cloud hover effect */
+.cloud-icon:hover {
+  box-shadow: 0 0 60px rgba(249, 249, 249, 0.4);
+  transform: translateY(-3px);
+  transition: all 0.3s ease;
+  
+}
+
+/* 🌀 Bounce on click using :active */
+.menu-toggle:active .cloud-icon {
+  animation: bounce 0.4s ease;
+}
+
+@keyframes bounce {
+  0%   { transform: scale(1); }
+  30%  { transform: scale(1.1); }
+  50%  { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+
+/* Responsive tweaks (optional) */
+/* @media (min-width: 600px) {
+  .menu-toggle {
+    margin-top: 2rem;
+  }
+  .landing-image {
+    width: 400px;
+    height: 400px;
+  }
+} */
+
+@media (max-width: 600px) {
+  .landing-image {
+    max-width: 300px;
+  }
+}
+
+
+/* Footer styling */
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 1rem 0;
+  background: linear-gradient(to bottom, #2e4a7e, #121e33);
+  color: white;
+}
+
+/* Animate insta icon on hover */
+footer a:hover svg {
+  transform: scale(1.2);
+  transition: transform 0.2s ease;
+}
+
