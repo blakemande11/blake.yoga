@@ -4,7 +4,23 @@ title: Home
 ---
 
 <section class="home"> <!-- class = "home" allows for css styling control in style.css -->
-    <img src = "images/landing.JPG" class = "landing-image">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.css"> <!-- for carousel, css glider -->
+    <script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+
+    <div class="glider-contain">
+        <div class="glider">
+          <img src = "images/landing.JPG" alt = "landing-image">
+          <img src="images/pincha.JPG" alt="pincha">
+          <img src="images/hs.jpg" alt="hs">
+        </div>
+      
+        <button aria-label="Previous" class="glider-prev">«</button>
+        <button aria-label="Next" class="glider-next">»</button>
+        <div role="tablist" class="dots"></div>
+      </div>
+      
+    
   <h1>About</h1>
   <p>
     Hey, I'm Blake, a yogi, meditator, and human originally from New York. In August 2024, I left my corporate consulting job in NYC to follow 
@@ -21,6 +37,25 @@ title: Home
     I truly believe yoga is for everybody — that the practice has a magical way of meeting you where you're at. 
     I feel grateful that I get to share my experience of yoga with others and hope to practice with you soon! 
   </p>
+
+
+  <!-- Glider JS (before </body>) -->
+<script src="https://cdn.jsdelivr.net/npm/glider-js@1/glider.min.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    new Glider(document.querySelector('.glider'), {
+      slidesToShow: 1,
+      dots: '.dots',
+      arrows: {
+        prev: '.glider-prev',
+        next: '.glider-next'
+      },
+      draggable: true,
+      scrollLock: true
+    });
+  });
+</script>
+
 
 </section>
 
