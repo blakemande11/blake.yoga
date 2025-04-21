@@ -9,6 +9,7 @@ body {
   background-color:#2e4a7e;
   color: white;
   line-height: 1.6;
+  
 }
 
 main {
@@ -339,3 +340,68 @@ footer a:hover svg {
   transition: transform 0.2s ease;
 }
 
+
+/* BLOG POST STYLING */
+
+/* Target blog posts specifically */
+.blog-post .post {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+.blog-post .post-header {
+  text-align: center;
+  margin-bottom: 0rem;
+}
+
+.blog-post .post-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: -1rem; /* Adjust the top margin to bring title closer */
+  margin-bottom: 0.5rem;
+}
+
+.blog-post .post-subtitle {
+  font-style: italic;
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: -0.5rem;
+  margin-bottom: .5rem;
+  color: #ffffff;
+}
+
+.blog-post .post-image-container {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0 2rem;
+}
+
+.blog-post .post-image {
+  max-width: 100%;
+  width: 100%;
+  max-width: 600px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post .post-content {
+  line-height: 1.6;
+  font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+  .blog-post .post {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .blog-post .post-title {
+    font-size: 1.6rem;
+  }
+
+  .blog-post .post-content {
+    font-size: 1rem;
+  }
+}
