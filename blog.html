@@ -2,13 +2,20 @@
 layout: default
 title: Blog
 ---
+<!-- <h2>Latest Posts</h2> -->
 
-<h2>Latest Posts</h2>
-<ul>
+<div class="blog-container">
   {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}"><strong>{{ post.title }}</strong></a>
-      <small>– {{ post.date | date: "%B %d, %Y" }}</small>
-    </li>
+    <div class="blog-post-preview">
+      <a href="{{ post.url }}">
+        {% if post.image %}
+          <img src="{{ post.image }}" alt="{{ post.title }} image" class="preview-image">
+        {% endif %}
+        <div class="preview-content">
+          <h2 class="preview-title">{{ post.title }}</h2>
+          <p class="preview-subtitle">{{ post.subtitle }}</p>
+        </div>
+      </a>
+    </div>
   {% endfor %}
-</ul>
+</div>
