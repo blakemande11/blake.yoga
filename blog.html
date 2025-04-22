@@ -9,7 +9,9 @@ title: Blog
     <div class="blog-post-preview">
       <a href="{{ post.url }}">
         {% if post.image %}
-          <img src="{{ post.image }}" alt="{{ post.title }} image" class="preview-image">
+          <!-- NOTE: Each blog post can have an image in it. In the top of that blog's markdown you can adjust the postion of where the image sits on the preview -->
+          <img src="{{ post.image }}" alt="{{ post.title }}" class="preview-image" style="object-position: {{ post.image_position }}"> 
+
         {% endif %}
         <div class="preview-content">
           <h2 class="preview-title">{{ post.title }}</h2>

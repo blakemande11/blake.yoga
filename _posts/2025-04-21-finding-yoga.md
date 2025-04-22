@@ -4,6 +4,7 @@ title: "Finding Yoga"
 subtitle: "You can ask me how I found yoga, but maybe it found me?"
 date: 2025-04-15
 image: "/images/blog1.png"
+image_position: "center 69%"
 ---
 
 My university required all students to take a physical education class, and I convinced a group of friends to do a yoga course with me. At the time I knew literally **nothing** about the practice, I was a nascent gym bro hoping this yoga thing would make me a little less stiff. That semester didn’t last much longer - the world suddenly shut down because of COVID-19, but 19 year old me was hooked. 
