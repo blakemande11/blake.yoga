@@ -360,6 +360,8 @@ footer a:hover svg {
   width: 380px;
   display: flex;
   flex-direction: column;
+  /* background-color: #f5f0e6; */
+  background-color: #f3ece2;
   justify-content: space-between; /* Distributes content evenly */
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -388,13 +390,14 @@ footer a:hover svg {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 0.5rem 0;
+  color: #2e4a7e;
 }
 
 .preview-subtitle {
   font-size: 1rem;
   font-style: italic;
   font-weight: 200;
-  color: #ffffff;
+  color: #2e4a7e;
   margin-top: -.6rem;
 }
 
@@ -410,6 +413,8 @@ footer a:hover svg {
 .blog-post .post {
   max-width: 1000px;
   margin: 0 auto;
+  background-color: #f9f5ec;
+  color: #2e4a7e;
   padding: 1rem;
   border-radius: 12px;
 }
@@ -417,11 +422,14 @@ footer a:hover svg {
 .blog-post .post-header {
   text-align: center;
   margin-bottom: 0rem;
-  margin-top: -2rem;
+  background-color:  #f9f5ec;
+  color: #2e4a7e;
+  margin-top: 0rem;
 }
 
 .blog-post .post-title {
   font-size: 2rem;
+  color: #2e4a7e;
   font-weight: bold;
   margin-top: -1rem; /* Adjust the top margin to bring title closer */
   margin-bottom: 0.5rem;
@@ -430,15 +438,16 @@ footer a:hover svg {
 .blog-post .post-subtitle {
   font-style: italic;
   font-size: 1.1rem;
+  color: #2e4a7e;
   text-align: center;
   margin-top: -0.5rem;
   margin-bottom: .5rem;
-  color: #ffffff;
 }
 
 .blog-post .post-image-container {
   display: flex;
   justify-content: center;
+  background-color:  #f9f5ec;
   margin: 0 0 2rem;
 }
 
@@ -460,6 +469,15 @@ footer a:hover svg {
     padding: 1rem;
     margin: .2rem;
   }
+  body.blog-post {
+    background-color:  #f9f5ec;
+  }
+
+  body.blog-post main {
+    background-color: #f9f5ec;
+  }
+
+
 
   .blog-post .post-title {
     font-size: 1.6rem;
