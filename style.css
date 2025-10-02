@@ -341,28 +341,85 @@ footer a:hover svg {
   transition: transform 0.2s ease;
 }
 
+/* BLOG LANDING PAGE STYLING */
+.blog-container {
+  display: flex;
+  flex-direction: column; /* stack posts vertically */
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.blog-post-preview {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease;
+}
+
+.blog-post-preview:hover {
+  transform: translateY(-4px);
+}
+
+.blog-post-preview a {
+  display: block;
+  padding: 1rem;
+  color: white;
+}
+
+.preview-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+}
+
+.preview-content {
+  text-align: left;
+}
+
+.preview-title {
+  font-size: 1.4rem;
+  margin: 0 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.preview-subtitle {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+}
+
+.preview-date {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
 
 /* BLOG LANDING PAGE STYLING */
 
-.blog-container {
+/* .blog-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* Centers the child elements horizontally */
+  justify-content: center;  
   gap: 1.5rem;
   padding: 2rem;
-  max-width: 500px; /* Or set a width that fits your design */
-  margin: 0 auto;  /* Centers the container horizontally */
+  max-width: 500px; 
 }
 
 
 .blog-post-preview {
-  max-height: 380px; /* BLAKE NOTE: changed to max-height so the subtitle is closer to the bottom, may create probelms later tho */
+  max-height: 380px; 
   width: 380px;
   display: flex;
   flex-direction: column;
-  /* background-color: #f5f0e6; */
+ 
   background-color: #f3ece2;
-  justify-content: space-between; /* Distributes content evenly */
+  justify-content: space-between; 
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
@@ -378,8 +435,7 @@ footer a:hover svg {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  /* object-position: center 69%; */
-  /* border-bottom: 2px solid #ddd; */
+  
 }
 
 .preview-content {
@@ -400,16 +456,11 @@ footer a:hover svg {
   color: #2e4a7e;
   margin-top: -.6rem;
 }
+ */
+
+/* BLOG POST STYLING
 
 
-
-
-
-
-
-/* BLOG POST STYLING */
-
-/* Target blog posts specifically */
 .blog-post .post {
   max-width: 1000px;
   margin: 0 auto;
@@ -486,4 +537,4 @@ footer a:hover svg {
   .blog-post .post-content {
     font-size: 1.4rem;
   }
-}
+} */

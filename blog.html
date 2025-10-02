@@ -1,23 +1,56 @@
 ---
 layout: default
-title: Blog
+title: Writings
 ---
-<!-- <h2>Latest Posts</h2> -->
 
-<div class="blog-container">
-  {% for post in site.posts %}
-    <div class="blog-post-preview">
-      <a href="{{ post.url }}">
-        {% if post.image %}
-          <!-- NOTE: Each blog post can have an image in it. In the top of that blog's markdown you can adjust the postion of where the image sits on the preview -->
-          <img src="{{ post.image }}" alt="{{ post.title }}" class="preview-image" style="object-position: {{ post.image_position }}"> 
+<h2>Latest Writings from Substack...please excuse the appearance my webdeveloper (chatgpt) and I are working on it 🫠</h2>
 
-        {% endif %}
-        <div class="preview-content">
-          <h2 class="preview-title">{{ post.title }}</h2>
-          <p class="preview-subtitle">{{ post.subtitle }}</p>
-        </div>
-      </a>
-    </div>
-  {% endfor %}
+<div id="substack-feed" class="blog-container">
+  <p>Loading posts...</p>
 </div>
+
+<!-- Substack Signup Widget -->
+<div style="margin-top: 2rem; text-align: center;">
+  <iframe src="https://blakenotbuddha.substack.com/embed" 
+          width="100%" height="320" 
+          style="border:1px solid #EEE; background:white;" 
+          frameborder="0" scrolling="no"></iframe>
+</div>
+
+<script>
+  async function loadSubstackFeed() {
+    const feedUrl = "https://blakenotbuddha.substack.com/feed";
+    const response = await fetch("https://api.rss2json.com/v1/api.json?rss_url=" + feedUrl);
+    const data = await response.json();
+
+    const container = document.getElementById("substack-feed");
+    container.innerHTML = "";
+
+    // Limit to 5 latest posts
+    data.items.slice(0, 5).forEach(item => {
+      const post = document.createElement("div");
+      post.classList.add("blog-post-preview");
+
+      // Some feeds have a thumbnail in `enclosure.link`
+      const thumbnail = item.enclosure && item.enclosure.link ? 
+                        `<img src="${item.enclosure.link}" alt="${item.title}" class="preview-image">` : "";
+
+      // Excerpt = strip HTML from description and shorten
+      const excerpt = item.description.replace(/(<([^>]+)>)/gi, "").substring(0, 140) + "...";
+
+      post.innerHTML = `
+        <a href="${item.link}" target="_blank">
+          ${thumbnail}
+          <div class="preview-content">
+            <h2 class="preview-title">${item.title}</h2>
+            <p class="preview-subtitle">${excerpt}</p>
+            <p class="preview-date">${item.pubDate.substring(0, 10)}</p>
+          </div>
+        </a>
+      `;
+      container.appendChild(post);
+    });
+  }
+
+  loadSubstackFeed();
+</script>
